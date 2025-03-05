@@ -1,0 +1,169 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  overflow-x: hidden;
+}
+
+.sidebar {
+  width: 250px;
+  background: #090909;
+  color: white;
+  padding: 20px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.logout-btn {
+  position: absolute;
+  bottom: 50px;
+  background-color: #d9534f;
+  color: white;
+  border: none;
+  padding: 10px;
+  text-align: left;
+  width: 90%; /* Adjust width to your preference */
+  max-width: 250px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.sidebar .logout-btn:hover {
+  background-color: #c9302c !important;
+}
+.sidebar img {
+  width: 100%;
+  border-radius: 20px;
+  margin-bottom: -30px;
+}
+
+.sidebar button {
+  background: f8f9fa;
+  color: black;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px 0;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 16px;
+}
+
+.sidebar button:hover {
+  background: #444;
+  border-radius: 10px;
+}
+
+.active {
+  background: #7b7a7a;
+  border-radius: 5px;
+}
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns per row */
+  gap: 40px;
+  padding: 20px;
+  margin-left: 140px;
+}
+
+.car-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 70px;
+  width: 220px;
+  min-height: 500px;
+  position: relative;
+  gap: 10px;
+  margin: 0; /* Remove margin to keep grid alignment */
+  bottom: 0; /* Remove bottom offset */
+}
+
+.car-card img {
+  width: 100%;
+  max-height: 150px; /* Controls image size */
+  object-fit: contain; /* Prevents stretching */
+}
+
+.car-details {
+  flex: 1;
+  text-align: center;
+}
+
+.car-price {
+  margin-top: auto; /* Pushes the price and button to the bottom */
+  text-align: center;
+}
+
+.book-now {
+  background: #000;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 200px;
+}
+
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 23px;
+}
+
+.features i {
+  margin-right: -2px;
+  text-align: center;
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  width: 350px;
+  z-index: 1000;
+  text-align: center;
+}
+
+.popup input {
+  width: 90%;
+  padding: 8px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+.popup button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.popup button[type="submit"] {
+  background: black;
+  color: white;
+}
+
+.popup button[type="button"] {
+  background: red;
+  color: white;
+}
