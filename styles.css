@@ -21,6 +21,21 @@ body {
   flex-direction: column;
   align-items: center;
 }
+#proceed-transaction-btn {
+  background: #efeded;
+  color: black;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px 0;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 16px;
+}
+#proceed-transaction-btn:hover {
+  background-color: #7c7e80; /* Darker blue on hover */
+  transform: scale(1); /* Slightly enlarge on hover */
+}
 .logout-btn {
   position: absolute;
   bottom: 50px;
@@ -68,7 +83,7 @@ body {
 .container {
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* 3 columns per row */
-  gap: 40px;
+  gap: 50px;
   padding: 20px;
   margin-left: 140px;
 }
@@ -114,6 +129,15 @@ body {
   cursor: pointer;
   width: 200px;
 }
+.book-now:hover {
+  background: #444;
+  border-radius: 8px;
+}
+.book-now.booked {
+  background-color: gray;
+  color: white;
+  cursor: not-allowed;
+}
 
 .features {
   display: flex;
@@ -129,14 +153,15 @@ body {
 .popup {
   display: none;
   position: fixed;
-  top: 50%;
+  top: 40%;
+  margin-top: 90px;
   left: 50%;
   transform: translate(-50%, -50%);
   background: white;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-  width: 350px;
+  width: 450px;
   z-index: 1000;
   text-align: center;
 }
@@ -166,4 +191,185 @@ body {
 .popup button[type="button"] {
   background: red;
   color: white;
+}
+/* Car Bag Section */
+#car-bag {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #050505;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 50px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#car-bag i {
+  font-size: 20px;
+}
+
+#car-count {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* Selected Cars Popup */
+#selected-cars-popup {
+  display: none;
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 400px;
+  padding: 20px;
+  z-index: 1000;
+
+  /* 🔹 Enable scrolling */
+  max-height: 80vh; /* Prevent it from growing too tall */
+  overflow-y: auto; /* Enable vertical scroll when needed */
+}
+
+/* 🔹 Ensure selected cars are inside a scrollable container */
+#selectedCarsList {
+  max-height: 50vh;
+  overflow-y: auto;
+}
+
+/* 🔹 Improve the car image size */
+.car-detailss {
+  display: flex;
+  align-items: center; /* Align image and details vertically */
+  gap: 15px; /* Space between image and details */
+}
+
+.selected-car-image {
+  width: 100px; /* Set a fixed width for the image */
+  height: 60px; /* Set a fixed height for the image */
+  object-fit: cover; /* Ensure the image fits well */
+  border-radius: 8px; /* Rounded corners for the image */
+}
+
+.car-detailss-vertical {
+  display: flex;
+  flex-direction: column; /* Stack children vertically */
+  gap: 8px; /* Space between each line */
+}
+
+.car-detailss-vertical strong {
+  font-size: 18px; /* Larger font for car name */
+  color: #333; /* Darker text for emphasis */
+}
+
+.car-detailss-vertical div {
+  font-size: 14px; /* Smaller font for details */
+  color: #555; /* Lighter text for details */
+}
+
+/* Modal Styling */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  width: 400px;
+  margin: 10% auto;
+  border-radius: 8px;
+  text-align: center;
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.modal-content input,
+.modal-content select {
+  width: 85%;
+  padding: 8px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.modal-content button {
+  width: 100%;
+  padding: 10px;
+  background: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.modal-content button:hover {
+  background: #218838;
+}
+.popup-header h2 {
+  text-align: center;
+}
+/* Success Modal Styles */
+#successModal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+#closeSuccessModal {
+  margin-top: 10px;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+}
+/* Style for booked dates */
+input[type="date"]::-webkit-datetime-edit {
+  color: black; /* Default color */
+}
+input[type="date"].invalid {
+  background-color: #ffcccc; /* Light red for booked dates */
+}
+.red-text {
+  color: red;
+  font-weight: bold; /* Optional: Makes the text bold */
+}
+
+/* Customize the calendar */
+.flatpickr-calendar {
+  width: 50%;
+  margin: 0 auto;
+  height: 300px; /* Set a fixed height for the calendar */
+}
+
+/* Style for booked dates */
+.flatpickr-day.booked {
+  background-color: #ffcccc; /* Light red */
+  color: #721c24;
+  text-decoration: line-through;
 }
